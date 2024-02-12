@@ -1,10 +1,14 @@
-import './App.css';
+import { Container } from 'react-bootstrap';
+import styles from './App.module.css';
 import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <NavBar />
+      <Container className={styles.Main}>
+
+      </Container>
     </div>
   );
 }

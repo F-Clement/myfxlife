@@ -8,3 +8,13 @@
 .Main {
     padding-top: 10vh;
 }
+
+a {
+    color: #555555;
+    transition: color ease-in-out 0.3s;
+  }
+  
+a:hover {
+    text-decoration: none;
+    color: aqua;
+  }

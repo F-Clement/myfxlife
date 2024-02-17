@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Form, Button, Row, Col, } from 'react-bootstrap';
 import styles from '../../styles/SignUpForm.module.css';
+import axios from 'axios';
+import { useHistory, Alert } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 
 const SignUpForm = () => {
@@ -11,6 +15,8 @@ const SignUpForm = () => {
     });
 
     const {username, password1, password2} = signUpData;
+    const [errors, setErrors] = useState({});
+    const history = useHistory();
 
     const handleChange = (event) => {
         setSignUpData({
@@ -20,14 +26,22 @@ const SignUpForm = () => {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
-    }
+        event.preventDefault();
+        try {
+            await axios.post('/dj-rest-auth/registration/', signUpData)
+            history.push('/login')
+            
+        } catch (err) {
+            setErrors(err.response?.data)
+            
+        }
+    };
 
     return (
         <Row className={styles.Row}> 
             <Col>
                 <h1 className={styles.SignupHeader}>Sign Up</h1>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
                         <Form.Label className="d-none">Username</Form.Label>
                         <Form.Control 
@@ -38,6 +52,9 @@ const SignUpForm = () => {
                             onChange={handleChange}
                         />
                     </Form.Group>
+                    {errors.username?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>{message}</Alert>
+                    ))}
 
                     <Form.Group controlId="password1">
                         <Form.Label className="d-none">Password</Form.Label>
@@ -49,6 +66,9 @@ const SignUpForm = () => {
                             onChange={handleChange}
                         />
                     </Form.Group>
+                    {errors.password1?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>{message}</Alert>
+                    ))}
 
                     <Form.Group controlId="password2">
                         <Form.Label className="d-none">Confirm password</Form.Label>
@@ -60,11 +80,17 @@ const SignUpForm = () => {
                             onChange={handleChange}
                          />
                     </Form.Group>
+                    {errors.password2?.map((message, idx) => (
+                    <Alert variant="warning" key={idx}>{message}</Alert>
+                    ))}
                     <Button onClick={handleSubmit} variant="primary" type="Signup">
                         Submit
                     </Button>
+                    {errors.non_field_errors?.map((message, idx) => (
+                    <Alert key={idx} variant="warning" className="mt-3">{message}</Alert>
+                     ))}
                 </Form>
-                <p>Click Login if you already have an account</p>
+                <p>Already have an account? Then <Link className={styles.TextLink} to="/login">Login</Link></p>
             </Col>
         </Row>
     )

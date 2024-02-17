@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import SignUpForm from './pages/auth/SignUpForm';
+import './api/axiosDefaults';
 
 
 function App() {

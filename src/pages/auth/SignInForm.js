@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Form, Row, Button, Col } from 'react-bootstrap'
 import styles from '../../styles/SignUpForm.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function SignInForm() {
     const [signInData, setSignInData] = useState({
@@ -10,6 +11,7 @@ function SignInForm() {
     })
 
     const { username, password } = signInData;
+    const history = useHistory();
 
     const handleChange = (event) => {
         setSignInData({
@@ -18,12 +20,21 @@ function SignInForm() {
         });
     };
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+          await axios.post("/dj-rest-auth/login/", signInData);
+          history.push("/");
+        } catch (err) {
+        }
+      };
+
 
     return (
         <Row className={styles.Row}>
             <Col>
                 <h1 className={styles.SignupHeader}>Sign In</h1>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
                         <Form.Label className="hidden">Username</Form.Label>
                         <Form.Control

@@ -1,5 +1,5 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://myfxlife-api-ccff7c686884.herokuapp.com/';
-axios.defaults.headers.post['Content-Type'] = 'multipar/form-data';
+axios.defaults.baseURL = 'https://myfxlifeapi-66a11d885add.herokuapp.com/';
+axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 axios.defaults.withCredentials = true;

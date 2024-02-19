@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Row, Button, Col } from 'react-bootstrap'
+import { Form, Row, Button, Col, Alert } from 'react-bootstrap'
 import styles from '../../styles/SignUpForm.module.css';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -12,6 +12,7 @@ function SignInForm() {
 
     const { username, password } = signInData;
     const history = useHistory();
+    const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         setSignInData({
@@ -23,11 +24,12 @@ function SignInForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          await axios.post("/dj-rest-auth/login/", signInData);
-          history.push("/");
+            await axios.post("/dj-rest-auth/login/", signInData);
+            history.push("/");
         } catch (err) {
+            setErrors(err.response?.data);
         }
-      };
+    };
 
 
     return (
@@ -45,6 +47,9 @@ function SignInForm() {
                             onChange={handleChange}
                         />
                     </Form.Group>
+                    {errors.username?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>{message}</Alert>
+                    ))}
 
                     <Form.Group controlId="password">
                         <Form.Label className="hidden">Password</Form.Label>
@@ -56,9 +61,17 @@ function SignInForm() {
                             onChange={handleChange}
                         />
                     </Form.Group>
+                    {errors.password?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>{message}</Alert>
+                    ))}
                     <Button type="submit">
                         Submit
                     </Button>
+                    {errors.non_field_errors?.map((message, idx) => (
+                        <Alert key={idx} variant="warning" className="mt-3">
+                            {message}
+                        </Alert>
+                    ))}
                     <p>New user? then <Link className={styles.TextLink} to="/signup">signup</Link></p>
                 </Form>
             </Col>

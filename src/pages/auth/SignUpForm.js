@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import { Form, Button, Row, Col, } from 'react-bootstrap';
 import styles from '../../styles/SignUpForm.module.css';
-import axios from 'axios';
-import { useHistory, Alert } from 'react-router-dom/cjs/react-router-dom.min';
-
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Form, Button, Col, Row, Alert } from "react-bootstrap";
+import axios from "axios";
 
 
 const SignUpForm = () => {
@@ -28,11 +26,11 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/registration/', signUpData)
-            history.push('/login')
+            await axios.post('/dj-rest-auth/registration/', signUpData);
+            history.push('/login');
             
         } catch (err) {
-            setErrors(err.response?.data)
+            setErrors(err.response?.data);
             
         }
     };

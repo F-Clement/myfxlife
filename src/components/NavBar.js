@@ -6,29 +6,50 @@ import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
 import axios from 'axios'
 import Avatar from './Avatar'
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
+import Swal from 'sweetalert2'
+
+
+// import ConfirmLogout from './ConfirmLogout'
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
 
     const addPostIcon = (
         <NavLink
-          className={styles.NavLink}
-          activeClassName={styles.Active}
-          to="/posts/create"
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
         >
-          <i className="far fa-plus-square"></i>Add post
+            <i className="far fa-plus-square"></i>Add post
         </NavLink>
     );
+    
+
+    const ConfirmLogout = () => {
+        Swal.fire({
+            title: "Are you sure you want to logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes"
+          }).then((result) => {
+            if (result.isConfirmed) {handleSignOut()}   
+          });
+    }
 
     const handleSignOut = async () => {
         try {
-          await axios.post("dj-rest-auth/logout/");
-          setCurrentUser(null);
+            await axios.post("dj-rest-auth/logout/");
+            setCurrentUser(null);
         } catch (err) {
-          console.log(err);
+            console.log(err);
         }
-      };
+    };
 
 
     const loggedInIcons = (
@@ -39,10 +60,10 @@ const NavBar = () => {
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
             </NavLink>
-            <NavLink className={styles.NavLink}  to="/" onClick={handleSignOut} >
+            <NavLink className={styles.NavLink} to="/" onClick={ConfirmLogout} >
                 Logout<i class="fa-solid fa-right-from-bracket"></i>
             </NavLink>
-        
+
         </>
     );
     const loggedOutIcons = (
@@ -51,30 +72,32 @@ const NavBar = () => {
                 <i className='fas fa-sign-in-alt'></i>Login
             </NavLink>
 
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="signup">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="signup" onClick={handleSignOut}>
                 <i className='fas fa-user-plus'></i>Signup
             </NavLink>
 
-            </>
+        </>
     );
 
 
     return (
-        <Navbar className={styles.NavBar} bg="light" expand="md" fixed='top'>
+        <Navbar expanded={expanded} className={styles.NavBar} bg="light" expand="md" fixed='top'>
             <Container>
                 <NavLink to="/">
                     <Navbar.Brand>
                         <img src={logo} alt='logo' height='45' />
                     </Navbar.Brand></NavLink>
-                    {currentUser && addPostIcon}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                {currentUser && addPostIcon}
+                <Navbar.Toggle
+                    ref={ref}
+                    onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
                         <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
                             <i className='fas fa-home'></i>Home
                         </NavLink>
-                    
-                            {currentUser ? loggedInIcons : loggedOutIcons}
+
+                        {currentUser ? loggedInIcons : loggedOutIcons}
 
                     </Nav>
                 </Navbar.Collapse>

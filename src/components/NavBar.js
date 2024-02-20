@@ -3,20 +3,44 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import logo from '../assets/logo.png'
 import styles from '../styles/NavBar.module.css'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
-import { useCurrentUser } from '../contexts/CurrentUserContext'
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
+import axios from 'axios'
+import Avatar from './Avatar'
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const addPostIcon = (
+        <NavLink
+          className={styles.NavLink}
+          activeClassName={styles.Active}
+          to="/posts/create"
+        >
+          <i className="far fa-plus-square"></i>Add post
+        </NavLink>
+    );
+
+    const handleSignOut = async () => {
+        try {
+          await axios.post("dj-rest-auth/logout/");
+          setCurrentUser(null);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+
     const loggedInIcons = (
         <>
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="posts">
                 <i class="fa-solid fa-folder-open"></i>Posts
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="profile">
-                <i class="fa-regular fa-id-card"></i>Profile
+            <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
+                <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="logout">
-                <i class="fa-solid fa-right-from-bracket"></i>Logout
+            <NavLink className={styles.NavLink}  to="/" onClick={handleSignOut} >
+                Logout<i class="fa-solid fa-right-from-bracket"></i>
             </NavLink>
         
         </>
@@ -42,6 +66,7 @@ const NavBar = () => {
                     <Navbar.Brand>
                         <img src={logo} alt='logo' height='45' />
                     </Navbar.Brand></NavLink>
+                    {currentUser && addPostIcon}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">

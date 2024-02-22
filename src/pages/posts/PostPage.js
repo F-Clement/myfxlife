@@ -24,7 +24,6 @@ function PostPage() {
                   console.log(post);
             }catch(err){
                 console.log(err);
-
             }
         };
         handleMount();

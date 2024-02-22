@@ -7,6 +7,7 @@ import './api/axiosDefaults';
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
+import Home from './pages/Home';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <NavBar />
           <Container className={styles.Main}>
             <Switch>
-              <Route exact path="/" render={() => <h1>Home Page</h1>} />
+              <Route exact path="/" render={() => <Home />} />
               <Route exact path="/posts" render={() => <h1>Posts</h1>} />
               <Route exact path="/login" render={() => <SignInForm />} />
               <Route exact path="/logout" render={() => <h1>Logout</h1>} />

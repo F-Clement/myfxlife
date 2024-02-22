@@ -22,7 +22,7 @@ const NavBar = () => {
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
-            to="/posts/create"
+            to="/create/post"
         >
             <i className="far fa-plus-square"></i>Add post
         </NavLink>

@@ -9,6 +9,7 @@ import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import PostsPage from './pages/posts/PostsPage';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Container className={styles.Main}>
             <Switch>
               <Route exact path="/" render={() => <Home />} />
-              <Route exact path="/posts" render={() => <h1>Posts</h1>} />
+              <Route exact path="/posts" render={() => <PostsPage/> } />
               <Route exact path="/login" render={() => <SignInForm />} />
               <Route exact path="/logout" render={() => <h1>Logout</h1>} />
               <Route exact path="/signup" render={() => <SignUpForm />} />

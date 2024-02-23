@@ -8,6 +8,7 @@ import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route render={() => <p>Sorry! Page Not Found.</p>} />
             </Switch>
           </Container>
+          <Footer />
         </div>
   );
 }

@@ -1,27 +1,65 @@
 import React from 'react'
-import Hero from '../assets/myfx.jpg'
-import Pairs from '../assets/pairs.png'
-import { Container, Row, Col } from 'react-bootstrap'
+import Hero from '../assets/myforexlife.png'
+import Forex from '../assets/forex.jpg'
+import { Carousel, Container, Row, Col } from 'react-bootstrap'
+// import styles from '../styles/NavBar.module.css'
 const Home = () => {
   return (
     <div>
-      <Container>
-        <Row>
-          <Col sm={8}>
-          <img src={Hero} alt='Hero Image' />
-          </Col>
-          <Col sm={4}>
-          <img src={Pairs} alt='Currency Pairs' height='344' />
-          </Col>
-        </Row>
-        <Row>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
-          <Col sm>sm=true</Col>
-        </Row>
+
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={Hero}
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>Forex Charts and Pairs</h3>
+            <p>Share your success with the world</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={Forex}
+            alt="Second slide"
+          />
+
+          <Carousel.Caption>
+            <h3>Learn from The Roots</h3>
+            <p>A community ready to share knowledge and strategies</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+
+      <Container style={{margin:'4px'}}>
+          <Row>
+            <Col xs={12} md={4} style={{textAlign:'center'}}>
+              <h3> Most Like Post </h3>
+              <p> Names </p>
+              <p> Names </p>
+              <p> Names </p>
+
+            </Col>
+            <Col xs={12} md={4} style={{textAlign:'center'}}>
+              <h3>Latest Posts</h3>
+              <p> Names </p>
+              <p> Names </p>
+              <p> Names </p>
+
+            </Col>
+            <Col xs={12} md={4} style={{textAlign:'center'}}>
+              <h3>Most Followed Traders</h3>
+              <p> Names </p>
+              <p> Names </p>
+              <p> Names </p>
+
+            </Col>
+          </Row>
       </Container>
     </div>
   )
 }
 
-export default Home
+      export default Home

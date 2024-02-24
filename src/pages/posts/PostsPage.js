@@ -14,6 +14,7 @@ import styles from "../../styles/PostsPage.module.css";
 // import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import LikePosts from "../../components/LikePosts";
 
 
 function PostsPage({ message, filter = "" }) {
@@ -36,7 +37,14 @@ function PostsPage({ message, filter = "" }) {
     };
 
     setHasLoaded(false);
-    fetchPosts();
+    const timer = setTimeout(() => {
+      fetchPosts();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+
   }, [filter, query, pathname]);
 
 
@@ -87,6 +95,7 @@ function PostsPage({ message, filter = "" }) {
                 placeholder="Search posts"
               />
             </Form>
+            <LikePosts />
           </Col>
         </Row>
       </Container>

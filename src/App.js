@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import PostsPage from './pages/posts/PostsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import LikePosts from './components/LikePosts';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Route exact path="/profile" render={() => <h1>Profile</h1>} />
               <Route exact path="/create/post" render={() => <PostCreateForm /> } />
               <Route exact path="/posts/:id" render={() => <PostsPage message = "No results for this search" /> } />
+              <Route exact path="" render={() => <LikePosts filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />} />
               <Route render={() => <p>Sorry! Page Not Found.</p>} />
             </Switch>
           </Container>

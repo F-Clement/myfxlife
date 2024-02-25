@@ -18,11 +18,11 @@ const LikePosts = () => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(
-          "/likes/?ordering=-likes_count"
+          "/likes?ordering=-likes_count"
         );
         setLikeData((prevState) => ({
           ...prevState,
-          molstlikes: data,
+          mostLikes: data,
         }));
       } catch (err) {
         console.log(err);
@@ -37,7 +37,7 @@ const LikePosts = () => {
       {mostLikes.results.length ? (
         <>
           {mostLikes.results.map((like) => (
-            <p key={like.id}>{like.post}</p>
+            <p key={like.id}>{like.owner}</p>
           ))}
         </>
       ) : (

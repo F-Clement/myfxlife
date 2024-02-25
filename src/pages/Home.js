@@ -3,6 +3,7 @@ import Hero from '../assets/myforexlife.png'
 import Forex from '../assets/forex.jpg'
 import { Carousel, Container, Row, Col } from 'react-bootstrap'
 // import styles from '../styles/NavBar.module.css'
+import LikePosts from '../components/LikePosts'
 const Home = () => {
   return (
     <div>
@@ -51,6 +52,7 @@ const Home = () => {
             </Col>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3>Most Followed Traders</h3>
+              <LikePosts />
               <p> Names </p>
               <p> Names </p>
               <p> Names </p>

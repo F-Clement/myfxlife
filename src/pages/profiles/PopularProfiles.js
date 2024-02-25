@@ -7,7 +7,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const PopularProfiles = () => {
   const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });

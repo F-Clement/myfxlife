@@ -1,9 +1,11 @@
 import React from 'react'
 import Hero from '../assets/myforexlife.png'
 import Forex from '../assets/forex.jpg'
+import News from '../assets/fxnews.png'
 import { Carousel, Container, Row, Col } from 'react-bootstrap'
-// import styles from '../styles/NavBar.module.css'
-import LikePosts from '../components/LikePosts'
+import PopularProfiles from './profiles/PopularProfiles'
+import LikePost from '../components/LikePosts'
+
 const Home = () => {
   return (
     <div>
@@ -38,24 +40,18 @@ const Home = () => {
           <Row>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3> Most Like Post </h3>
-              <p> Names </p>
-              <p> Names </p>
-              <p> Names </p>
+              <LikePost />
+              
 
             </Col>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
-              <h3>Latest Posts</h3>
-              <p> Names </p>
-              <p> Names </p>
-              <p> Names </p>
+              <h3>FX News</h3>
+              <a href='https://www.forexfactory.com/' target="_blank" rel="noopener noreferrer"><img src={News} alt='Forex News'/></a>
 
             </Col>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3>Most Followed Traders</h3>
-              <LikePosts />
-              <p> Names </p>
-              <p> Names </p>
-              <p> Names </p>
+              <PopularProfiles />
 
             </Col>
           </Row>

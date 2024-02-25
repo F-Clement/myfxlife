@@ -52,7 +52,7 @@ function PostsPage({ message, filter = "" }) {
     <div>
 
       <Container>
-        <Row>
+        <Row  className="justify-content-md-center">
           <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form
             className={styles.SearchBar}
@@ -68,9 +68,8 @@ function PostsPage({ message, filter = "" }) {
           </Form>
         </Row>
           
-        <Row className="h-100">
-          <Col className="py-2 p-0 p-lg-2" lg={12}>
-            {/* <p>Popular profiles mobile</p> */}
+        <Row className="justify-content-md-center">
+          <Col className="py-2 p-0 p-lg-2" lg={10}>
             {hasLoaded ? (
               <>
                 {posts.results.length ? (
@@ -89,10 +88,8 @@ function PostsPage({ message, filter = "" }) {
               </Container>
             )}
           </Col>
-        </Row>      
-        
+        </Row>         
       </Container>
-
     </div>
   );
 }

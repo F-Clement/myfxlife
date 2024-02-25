@@ -57,11 +57,17 @@ const NavBar = () => {
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="posts">
                 <i class="fa-solid fa-folder-open"></i>Posts
             </NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="feed">
+                <i class="fa-solid fa-list"></i>Feed
+            </NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="liked">
+                <i class="fa-brands fa-gratipay"></i>Liked Post
+            </NavLink>
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
             </NavLink>
             <NavLink className={styles.NavLink} to="/" onClick={ConfirmLogout} >
-                Logout<i class="fa-solid fa-right-from-bracket"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>Logout
             </NavLink>
 
         </>

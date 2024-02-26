@@ -4,7 +4,8 @@ import Forex from '../assets/forex.jpg'
 import News from '../assets/fxnews.png'
 import { Carousel, Container, Row, Col } from 'react-bootstrap'
 import PopularProfiles from './profiles/PopularProfiles'
-import LikePost from '../components/LikePosts'
+import LikePosts from '../components/LikePosts'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -40,7 +41,7 @@ const Home = () => {
           <Row>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3> Most Like Post </h3>
-              <LikePost />
+              <LikePosts />
               
 
             </Col>
@@ -52,10 +53,11 @@ const Home = () => {
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3>Most Followed Traders</h3>
               <PopularProfiles />
-
             </Col>
           </Row>
+
       </Container>
+      <Footer />
     </div>
   )
 }

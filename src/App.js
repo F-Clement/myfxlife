@@ -7,7 +7,6 @@ import './api/axiosDefaults';
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import Home from './pages/Home';
-import Footer from './components/Footer';
 import PostsPage from './pages/posts/PostsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
@@ -16,7 +15,6 @@ import ProfilePage from './pages/profiles/ProfilePage';
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-
 
 
 function App() {
@@ -47,7 +45,6 @@ function App() {
               <Route render={() => <p>Sorry! Page Not Found.</p>} />
             </Switch>
           </Container>
-          <Footer />
         </div>
   );
 }

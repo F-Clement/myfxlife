@@ -77,11 +77,9 @@ const NavBar = () => {
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="login">
                 <i className='fas fa-sign-in-alt'></i>Login
             </NavLink>
-
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="signup" onClick={handleSignOut}>
                 <i className='fas fa-user-plus'></i>Signup
             </NavLink>
-
         </>
     );
 
@@ -102,14 +100,11 @@ const NavBar = () => {
                         <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to="/">
                             <i className='fas fa-home'></i>Home
                         </NavLink>
-
                         {currentUser ? loggedInIcons : loggedOutIcons}
-
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
     )
 }
 

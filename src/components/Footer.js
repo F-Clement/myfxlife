@@ -5,8 +5,8 @@ import { Row, Col} from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <div className={styles.Footer} bg="light" expand="md" fixed='bottom'>
-        <Row style={{backgroundColor: "lightgray", position: "absolute", fixed:'bottom'}}> 
+    <div className={styles.Footer} bg="light">
+        <Row style={{backgroundColor: "lightgray"}}> 
             <Col>
             <p className={styles.Para}>
                 The key to a successful trading lifestyle is DISCIPLINE. You might know a strategy

@@ -35,3 +35,54 @@ keep individual accounts secured. If user feels his password is stolen, there is
 Used [Figma](figma.com) to design how the website should look on a computer.
 
 <img src="src/assets/homedesign.png">
+
+## Technologies Used
+
+- Languages
+
+  - Python
+  - HTML
+  - JavaScript
+  - CSS
+
+- Tools
+
+  - Gitpod
+  - VS Code
+  - Figma
+  - React Bootstrap
+  - Heroku
+  - Git
+  - Tiny png
+  - Github
+  - React
+
+
+  ## Existing Features
+
+- Navigation Menu
+
+  There is a navigation menu at the top to help users navigate the pages of the
+  website easily. To the left is a logo and close to it an icon for users to click
+  when they want to create a post
+  <img src="/src/assets/navigation.png">
+
+
+- Create Post
+
+  Users should be able to create a post by feeling the provided form. Upload an image, write some content and give it a title then submit the post. If they change their minds in the process they can also cancel.
+
+  <img src="/src/assets/create.png">
+
+
+- View Post
+
+    By clicking on a post, a user will see details about the post. all comments, number of likes, post title and content. In the case wehre user owns the post, user can edit or delete this post.
+
+- Profiles
+
+    By clicking on user name or Avatar in posts, a user can see his or the details of the profile clicked i.e followers and followed count, number of posts and profile image.
+
+    <img src="/src/assets/profile.png">
+
+

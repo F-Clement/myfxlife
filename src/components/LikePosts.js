@@ -37,9 +37,10 @@ const LikePosts = () => {
     <Container className={appStyles.Content}>
       {mostLikes.results.length ? (
         <>
-          {mostLikes.results.slice(0, 6).map((post) => (
-            <p key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link></p>
-          ))}
+          {mostLikes.results.slice(0, 3).map((post) => (
+            <strong key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link>
+              <p>______________________</p></strong>
+          ))} <p>Click To View Post</p>
         </>
       ) : (
         <Asset spinner />

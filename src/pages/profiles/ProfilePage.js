@@ -20,6 +20,8 @@ import {
 import { Button, Image } from "react-bootstrap";
 import Post from "../posts/Post";
 
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
+
 function ProfilePage() {
   const [profilePosts, setProfilePosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -123,6 +125,7 @@ function ProfilePage() {
           )}
         </Container>
       </Col>
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
     </Row>
   );
 }

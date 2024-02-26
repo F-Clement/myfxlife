@@ -13,6 +13,10 @@ import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
 import PostEditForm from './pages/posts/PostEditForm';
 import ProfilePage from './pages/profiles/ProfilePage';
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+
 
 
 function App() {
@@ -37,6 +41,9 @@ function App() {
               <Route exact path="/feed" render={() => <PostsPage filter={`owner__followed__owner__profile=${profile_id}&`} />} />
               <Route exact path="/posts/:id/edit" render ={() => <PostEditForm />} />
               <Route exact path="/profiles/:id" render ={() => <ProfilePage />} />
+              <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
+              <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
+              <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
               <Route render={() => <p>Sorry! Page Not Found.</p>} />
             </Switch>
           </Container>

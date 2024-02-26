@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import PostsPage from './pages/posts/PostsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
+import PostEditForm from './pages/posts/PostEditForm';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route exact path="/posts/:id" render={() => <PostPage message = "No results for this search" /> } />
               <Route exact path="/Liked" render={() => <PostsPage filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />} />
               <Route exact path="/feed" render={() => <PostsPage filter={`owner__followed__owner__profile=${profile_id}&`} />} />
+              <Route exact path="/posts/:id/edit" render ={() => <PostEditForm />} />
               <Route render={() => <p>Sorry! Page Not Found.</p>} />
             </Switch>
           </Container>

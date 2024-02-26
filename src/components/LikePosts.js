@@ -4,6 +4,7 @@ import appStyles from "../App.module.css";
 import { useCurrentUser } from '../contexts/CurrentUserContext';
 import { axiosReq } from '../api/axiosDefaults';
 import Asset from './Asset';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const LikePosts = () => {
 
@@ -18,7 +19,7 @@ const LikePosts = () => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(
-          "/likes?ordering=-likes_count"
+          "/posts/?ordering=-likes_count"
         );
         setLikeData((prevState) => ({
           ...prevState,
@@ -36,8 +37,8 @@ const LikePosts = () => {
     <Container className={appStyles.Content}>
       {mostLikes.results.length ? (
         <>
-          {mostLikes.results.map((like) => (
-            <p key={like.id}>{like.owner}</p>
+          {mostLikes.results.slice(0, 6).map((post) => (
+            <p key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link></p>
           ))}
         </>
       ) : (

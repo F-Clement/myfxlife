@@ -29,12 +29,20 @@ keep individual accounts secured. If user feels his password is stolen, there is
 
 - The site owner also wants to encourage users to follow other users, like and comment on thier post. Thus provided special columns for most like and most followed
 
+#### User Stories to achieve goals : [User Stories](https://github.com/F-Clement/myfxlife/issues)
+
 
 ## Design
-
-Used [Figma](figma.com) to design how the website should look on a computer.
+* Home Page
+<p>Used [Figma](figma.com) to design how the website should look on a computer.</p>
 
 <img src="src/assets/homedesign.png">
+
+* Profile Page
+
+<p>By checking a profile, user should see following and followers count and profiles posts</p>
+
+<img src="src/assets/profilepage.png">
 
 ## Technologies Used
 
@@ -57,14 +65,33 @@ Used [Figma](figma.com) to design how the website should look on a computer.
   - Github
   - React
 
+## Fronend Libraries Used
+  * React
+    <p>Used React to be able to make use of Hooks to build components which will be used in the project. This gives room for seperation of concerns like seperate CSS files and functionalities build in seperate files. Thus allowing our code to be reusable and easy to fix incase of bugs. </p>
 
-  ## Existing Features
+  * [Sweet Alert](https://sweetalert2.github.io/#examples)
+    <p>Used sweet alert as it to prevent users from being logged out immediately they click on logout. This allows site owner and site user to be sure they want to logout and they just have to click yes to confirm</p>
+
+  * [React Bootstrap](https://react-bootstrap-v4.netlify.app/)
+    <p>React bootstrap like the regular bootstrap is specially designed for React applications. Thus very compatible and we used it for our layouts</p>
+
+
+## Existing Features
+
+- Login and Signup
+
+  Users should be able to create and account and login to enjoy all functionalities of the application.
+
+  <img src="/src/assets/login.png">
+  <img src="/src/assets/signup.png">
+
 
 - Navigation Menu
 
   There is a navigation menu at the top to help users navigate the pages of the
   website easily. To the left is a logo and close to it an icon for users to click
-  when they want to create a post
+  when they want to create a post.
+
   <img src="/src/assets/navigation.png">
 
 
@@ -78,6 +105,17 @@ Used [Figma](figma.com) to design how the website should look on a computer.
 - View Post
 
     By clicking on a post, a user will see details about the post. all comments, number of likes, post title and content. In the case wehre user owns the post, user can edit or delete this post.
+
+    <img src="/src/assets/forexpost.png">
+
+  
+- Search Posts
+
+    User can search for a post and while searching we have a loader to let user understand the process is still going on. Then when search is done the posts are displayed. If not an image to let user know the search did not yield results is displayed.
+
+    <img src="/src/assets/searching.png">
+
+    <img src="/src/assets/searchnotfound.png">
 
 - Profiles
 
@@ -199,4 +237,22 @@ Used [Figma](figma.com) to design how the website should look on a computer.
     </tr>
 </table>
 
+
+
+## Credits
+
+- Deployment
+
+Thanks to Code Institute's Tutor support for assistance during deployment.
+
+- Media
+
+All images on this project were downloaded from google. However all images on the readme file itself are screenshots demonstrating different features of the application.
+
+- Code
+
+
+Learned a lot from free content on the internet like [Stack Overflow](https://stackoverflow.com/)
+
+Special thanks to my mentor, Code Institute tutors and the CI Slack Channel for support.
 

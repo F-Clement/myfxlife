@@ -14,6 +14,8 @@ Users are also able to see the posts they liked. Therefore encouraging users to 
 A search bar is also provided for users to search posts by name. Then for security, users can always logout of their account to
 keep individual accounts secured. If user feels his password is stolen, there is also a possibility to change password, username and even the profile image.
 
+ ### N.B: This is the front end part of an application sending and receiving data from a backend application.
+Link To Bacend: <https://myfxlifeapi-66a11d885add.herokuapp.com/>
 
 ## Project Goals
 
@@ -44,6 +46,11 @@ keep individual accounts secured. If user feels his password is stolen, there is
 
 <img src="src/assets/profilepage.png">
 
+* Signin and Signup
+  <p>Used same design for our login and signup pages</p>
+
+  <img src="src/assets/signindesign.png">
+
 ## Technologies Used
 
 - Languages
@@ -67,7 +74,7 @@ keep individual accounts secured. If user feels his password is stolen, there is
 
 ## Fronend Libraries Used
   * React
-    <p>Used React to be able to make use of Hooks to build components which will be used in the project. This gives room for seperation of concerns like seperate CSS files and functionalities build in seperate files. Thus allowing our code to be reusable and easy to fix incase of bugs. </p>
+    <p>Used React to be able to make use of Hooks to build reusable components like (Navbar, Assets, Avatar) which will be used in the project. This gives room for seperation of concerns like seperate CSS files and functionalities build in seperate files. Thus allowing our code to be reusable and easy to fix incase of bugs. </p>
 
   * [Sweet Alert](https://sweetalert2.github.io/#examples)
     <p>Used sweet alert as it to prevent users from being logged out immediately they click on logout. This allows site owner and site user to be sure they want to logout and they just have to click yes to confirm</p>
@@ -83,6 +90,7 @@ keep individual accounts secured. If user feels his password is stolen, there is
   Users should be able to create and account and login to enjoy all functionalities of the application.
 
   <img src="/src/assets/login.png">
+
   <img src="/src/assets/signup.png">
 
 
@@ -267,6 +275,27 @@ keep individual accounts secured. If user feels his password is stolen, there is
     </tr>
 </table>
 
+## Responsive
+
+<p>The application is responsive as you can see on different screen sizes.</p>
+
+<img src="/src/assets/responsive.png">
+
+## Deployment
+
+This application was deployed on Heroku. Below are the steps taken to successfully deploy.
+
+1 - The requirement.txt file was populated using the command "pip3 freeze > requirements.txt"
+
+2 - Heruku deploy commands were added and a Procfile created.
+
+3 - Then we move to Heroku dashboard and create a new app. The app was named myfxlife just like the application and Europe was selected for region because the developer is in Germany.
+
+4 - The next steps were clicking the deploy tab, selecting Github, searching the project by its name and then connecting to Heroku by clicking connect.
+
+5 - Then clicking on Deploy Branch to complete the deploy. This application does not automatically deploy so each time the developer makes changes they have to come and deploy manually.
+
+6 - Finally the application is deployed live to URL: <https://myfxlife-79a50a9b3ce5.herokuapp.com/>
 
 
 ## Credits
@@ -277,12 +306,12 @@ Thanks to Code Institute's Tutor support for assistance during deployment.
 
 - Media
 
-All images on this project were downloaded from google. However all images on the readme file itself are screenshots demonstrating different features of the application.
+All images on this project were downloaded from google or from Code Institutes walkthrough project. However all images on the readme file itself are screenshots demonstrating different features of the application.
 
 - Code
 
-
+Thanks to Code Institutes walkthrough project we got a lot of boiler plate code and used it to feet our requirements.
 Learned a lot from free content on the internet like [Stack Overflow](https://stackoverflow.com/)
 
-Special thanks to my mentor, Code Institute tutors and the CI Slack Channel for support.
+Special thanks goes to my mentor, and thanks also to the Code Institute tutors and the CI Slack Channel for support.
 

@@ -34,7 +34,7 @@ function CommentEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+      
     }
   };
 
@@ -120,7 +120,7 @@ export default CommentEditForm;
 //       }));
 //       setShowEditForm(false);
 //     } catch (err) {
-//       console.log(err);
+//       
 //     }
 //   };
 

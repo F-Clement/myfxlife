@@ -26,7 +26,7 @@ const LikePosts = () => {
           mostLikes: data,
         }));
       } catch (err) {
-        console.log(err);
+        
       }
     };
 

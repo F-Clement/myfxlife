@@ -7,14 +7,11 @@ import Container from "react-bootstrap/Container";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-
-// import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-// import LikePosts from "../../components/LikePosts";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function PostsPage({ message, filter = "" }) {
@@ -22,6 +19,7 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const {pathname} = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
 
@@ -32,7 +30,7 @@ function PostsPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        
       }
     };
 
@@ -45,7 +43,7 @@ function PostsPage({ message, filter = "" }) {
       clearTimeout(timer);
     };
 
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
 
   return (

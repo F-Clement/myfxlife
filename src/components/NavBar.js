@@ -8,6 +8,7 @@ import axios from 'axios'
 import Avatar from './Avatar'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
 import Swal from 'sweetalert2'
+import { removeTokenTimestamp } from '../utils/utils'
 
 
 // import ConfirmLogout from './ConfirmLogout'
@@ -46,8 +47,9 @@ const NavBar = () => {
         try {
             await axios.post("dj-rest-auth/logout/");
             setCurrentUser(null);
+            removeTokenTimestamp();
         } catch (err) {
-            console.log(err);
+            
         }
     };
 

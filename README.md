@@ -113,7 +113,7 @@ keep individual accounts secured. If user feels his password is stolen, there is
 
     User can search for a post and while searching we have a loader to let user understand the process is still going on. Then when search is done the posts are displayed. If not an image to let user know the search did not yield results is displayed.
 
-    <img src="/src/assets/searching.png">
+    <img src="/src/assets/serching.png">
 
     <img src="/src/assets/searchnotfound.png">
 
@@ -228,6 +228,36 @@ keep individual accounts secured. If user feels his password is stolen, there is
     <tr>
         <td>Commenting on a post</td>
         <td>Post comments count should increase and comment should be displayed below the post</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Clicking on the three dots at the top right of a profile page</td>
+        <td>Options to edit profile, edit username and change passwords are provided</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Selecting to change password, username or edit profile</td>
+        <td>Respective forms are provided for user to input new information or upload image</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Submiting form data after updating</td>
+        <td>New information is uploaded to user profile immediately</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Clicking on three dots besides the date on a detailed post</td>
+        <td>Option to edit or delete post is provided. Clicking posts deletes post and edit posts provide form filled with post data so user can edit it</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>User click on cancel after wanting to edit a post</td>
+        <td>Post is not edited and user is redirected to previous page</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Edit post and click save</td>
+        <td>Post is edited and user is redirected to the post page with already updated data</td>
         <td>Pass</td>
     </tr>
     <tr>

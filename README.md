@@ -86,3 +86,117 @@ Used [Figma](figma.com) to design how the website should look on a computer.
     <img src="/src/assets/profile.png">
 
 
+## Testing
+
+- Testing aspects of the application to confirm goals are met and application works as expected.
+
+<table>
+    <tr>
+        <th>Action</th>
+        <th>Expected Results</th>
+        <th>Actual Results</th>
+    </tr>
+    <tr>
+        <td>First time user enters live link for the application into the browser</td>
+        <td>The home page is expected to load with only logged out nav links(Home, Login, Signup) displaying</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On signup page user provides valid information and submits</td>
+        <td>User account is created and user is redirected to login page</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On signup page user passwords do not match</td>
+        <td>An error message is displayed telling user the passwords don't match</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On signup page user does not provide a user name but inputs passwords and submits</td>
+        <td>Erro message is displayed telling user that the username field can not be empty</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On signup page user click submits without inputing content for any field</td>
+        <td>Error messages are displayed, one for each field telling user it can't be empty</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On login page user inputs a username and password that does not exist</td>
+        <td>Error message is displayed to let user he can't login with the credentials</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On login page user inputs username without password and submits</td>
+        <td>Error message is displayed letting user know the field can not be empty</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On login page user inputs valid username and password and submits</td>
+        <td>User is login and redirected to the home page of the application</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On home page user clicks on the Posts navigation link</td>
+        <td>All posts load with the latest posts at the top</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On home page user clicks on the Feed navigation link</td>
+        <td>Posts from profiles the user is following are displayed on his Feed</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>User clicks on Liked Post navigaion link</td>
+        <td>All posts user has liked are displayed</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>User Clicks on Add Post icon</td>
+        <td>A form is loaded where user can create a post by uploading an image giving it a title and some content</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On form to create post, a user submits without inputing any field</td>
+        <td>An error message is displayed that the title field can not be empty</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>On form to create post, user uploads image add a title and some content then click create</td>
+        <td>A post is created and user is redirected to that post page.</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>When a user likes a post</td>
+        <td>The post likes count increases and the post appears in users Liked Post</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>When a user follows or unfollows a profile</td>
+        <td>the users following count increases or decreases respectfully as the followed or unfollowed profile followers 
+        count increases or decreases</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Clicking on a profile navigation link, a user name or avatar</td>
+        <td>The profile details like following and followers count, post count and the profiles posts below these details</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Liking a post</td>
+        <td>Post likes count should increase</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Commenting on a post</td>
+        <td>Post comments count should increase and comment should be displayed below the post</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Clicking on Logout navigation</td>
+        <td>Pop up is displayed so that user confirms they want to sign out before the signout. If user cancels they are not signed out</td>
+        <td>Pass</td>
+    </tr>
+</table>
+
+

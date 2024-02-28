@@ -57,19 +57,19 @@ const NavBar = () => {
     const loggedInIcons = (
         <>
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="posts">
-                <i class="fa-solid fa-folder-open"></i>Posts
+                <i className="fa-solid fa-folder-open"></i>Posts
             </NavLink>
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="feed">
-                <i class="fa-solid fa-list"></i>Feed
+                <i className="fa-solid fa-list"></i>Feed
             </NavLink>
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="liked">
-                <i class="fa-brands fa-gratipay"></i>Liked Post
+                <i className="fa-brands fa-gratipay"></i>Liked Post
             </NavLink>
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
             </NavLink>
             <NavLink className={styles.NavLink} to="/" onClick={ConfirmLogout} >
-                <i class="fa-solid fa-right-from-bracket"></i>Logout
+                <i className="fa-solid fa-right-from-bracket"></i>Logout
             </NavLink>
 
         </>

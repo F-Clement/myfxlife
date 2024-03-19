@@ -56,13 +56,13 @@ const NavBar = () => {
 
     const loggedInIcons = (
         <>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="posts">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/posts">
                 <i className="fa-solid fa-folder-open"></i>Posts
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="feed">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/feed">
                 <i className="fa-solid fa-list"></i>Feed
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="liked">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/liked">
                 <i className="fa-brands fa-gratipay"></i>Liked Post
             </NavLink>
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
@@ -76,10 +76,10 @@ const NavBar = () => {
     );
     const loggedOutIcons = (
         <>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="login">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/login">
                 <i className='fas fa-sign-in-alt'></i>Login
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="signup" onClick={handleSignOut}>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/signup" onClick={handleSignOut}>
                 <i className='fas fa-user-plus'></i>Signup
             </NavLink>
         </>

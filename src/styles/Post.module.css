@@ -22,3 +22,8 @@
   .HeartOutline:hover {
     color: #f85032;
   }
+
+  .dimensions {
+    max-height: 35rem;
+    width: 40rem;
+  }

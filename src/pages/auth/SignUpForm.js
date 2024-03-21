@@ -39,7 +39,7 @@ const SignUpForm = () => {
     return (
         <div>
             <Row>
-                <img src={Home} alt='Home Page'></img>
+                <img className={styles.imagesize} src={Home} alt='Home Page'></img>
             </Row>
             <Row className={styles.Row}> 
                 <Col>

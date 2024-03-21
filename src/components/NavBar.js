@@ -65,6 +65,9 @@ const NavBar = () => {
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/liked">
                 <i className="fa-brands fa-gratipay"></i>Liked Post
             </NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/drafts">
+            <i class="fa-regular fa-note-sticky"></i>Draft
+            </NavLink>
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
             </NavLink>

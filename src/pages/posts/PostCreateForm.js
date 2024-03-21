@@ -67,6 +67,25 @@ function PostCreateForm() {
         }
     }
 
+    const handleDraft = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+
+        formData.append("title", title);
+        formData.append("content", content);
+        formData.append("image", imageInput.current.files[0]);
+
+        try {
+            const { data } = await axiosReq.post("/drafts/", formData);
+            history.push(`/drafts/${data.id}`);
+          } catch (err) {
+            
+            if (err.response?.status !== 401) {
+              setErrors(err.response?.data);
+            }
+        }
+    }
+
     const textFields = (
         <div className="text-center">
             <Form.Group>
@@ -108,6 +127,14 @@ function PostCreateForm() {
             <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
                 create
             </Button>
+            <Button
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                onClick={handleDraft}
+            >
+                save draft
+            </Button>
+            
+
         </div>
     );
 

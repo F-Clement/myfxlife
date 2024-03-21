@@ -8,6 +8,7 @@ import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import Home from './pages/Home';
 import PostsPage from './pages/posts/PostsPage';
+import DraftPost from './pages/posts/DraftPost';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
 import PostEditForm from './pages/posts/PostEditForm';
@@ -16,6 +17,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PageNotFound from './components/PageNotFound';
+
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route exact path="/posts" render={() => <PostsPage/> } />
+              <Route exact path="/drafts" render={() => <DraftPost /> } />
               <Route exact path="/login" render={() => <SignInForm />} />
               <Route exact path="/logout" render={() => <h1>Logout</h1>} />
               <Route exact path="/signup" render={() => <SignUpForm />} />

@@ -17,6 +17,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PageNotFound from './components/PageNotFound';
+import DraftPage from './pages/posts/DraftPage';
 
 
 
@@ -32,7 +33,8 @@ function App() {
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route exact path="/posts" render={() => <PostsPage/> } />
-              <Route exact path="/drafts" render={() => <DraftPost /> } />
+              <Route exact path="/drafts/:id" render={() => <DraftPost /> } />
+              <Route exact path="/drafts" render={() => <DraftPage /> } />
               <Route exact path="/login" render={() => <SignInForm />} />
               <Route exact path="/logout" render={() => <h1>Logout</h1>} />
               <Route exact path="/signup" render={() => <SignUpForm />} />

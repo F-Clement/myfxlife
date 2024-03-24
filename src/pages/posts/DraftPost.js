@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
+// import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Draft from "./Draft";
@@ -20,7 +20,6 @@ function DraftPost() {
           axiosReq.get(`/drafts/${id}`),
         ]);
         setDraft({ results: [draft] });
-        console.log(draft);
       } catch (err) {
         console.log(err);
       }

@@ -1,21 +1,18 @@
 import React from 'react'
 import styles from "../../styles/Post.module.css";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+// import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { Card, Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Avatar from "../../components/Avatar";
+// import Avatar from "../../components/Avatar";
 
 const Draft = (props) => {
     const {
         id,
         owner,
-        profile_id,
-        profile_image,
         title,
         content,
         image,
         updated_at,
-        Draftpost,
       } = props;
     
 
@@ -30,7 +27,7 @@ const Draft = (props) => {
            </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
+      <Link to={`/drafts/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>

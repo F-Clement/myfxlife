@@ -19,7 +19,6 @@ const Home = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Forex Charts and Pairs</h3>
             <p>Share your success with the world</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -29,33 +28,26 @@ const Home = () => {
             src={Forex}
             alt="Second slide"
           />
-
           <Carousel.Caption>
-            <h3>Learn from The Roots</h3>
             <p>A community ready to share knowledge and strategies</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-
       <Container style={{margin:'4px'}}>
           <Row>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
-              <h3> Most Like Post </h3>
+              <h3> Most Liked Signals </h3>
               <LikePosts />
-              
-
             </Col>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
-              <h3>FX News</h3>
+              <h3>Daily FX News</h3>
               <a href='https://www.forexfactory.com/' target="_blank" rel="noopener noreferrer"><img src={News} alt='Forex News'/></a>
-
             </Col>
             <Col xs={12} md={4} style={{textAlign:'center'}}>
               <h3>Most Followed Traders</h3>
               <PopularProfiles />
             </Col>
           </Row>
-
       </Container>
       <Footer />
     </div>

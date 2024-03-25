@@ -10,3 +10,9 @@
 .Active i {
     color: aqua;
 }
+
+.log {
+    max-height: 50px;
+    width: auto;
+
+}

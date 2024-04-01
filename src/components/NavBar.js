@@ -68,7 +68,7 @@ const NavBar = () => {
             <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/drafts">
                 <i class="fa-regular fa-note-sticky"></i>Draft
             </NavLink>
-            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/notifications">
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to="/info">
                 <i class="fa-solid fa-bell"></i>Info
             </NavLink>
             <NavLink className={styles.NavLink} to={`/profiles/${currentUser?.profile_id}`} >

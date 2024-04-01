@@ -9,12 +9,12 @@ import { Alert } from "react-bootstrap";
 
 // import Upload from "../../assets/upload.png";
 
-// import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-// import NotificationPage from "./NotificationPage";
+
 
 function CreateNotification() {
     const [errors, setErrors] = useState({});
@@ -42,12 +42,12 @@ function CreateNotification() {
 
         try {
             const {data} = await axiosReq.post("/notifications/", formData);
-            history.push(`/notifications/${data.id}`);
+            history.push(`/info/${data.id}`);
         } catch (err) {
-
+            console.log(err.response.data)
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
-                console.log(errors)
+                console.log(err)
             }
         }
     }
@@ -99,16 +99,17 @@ function CreateNotification() {
     return (
         <Form onSubmit={handleSubmit}>
             <Row>
-                {/* <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
                     <Container
                         className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
-                        <NotificationPage />
+                        <Container className={appStyles.Content}>{textFields}</Container>
+                        
                     </Container>
-                </Col> */}
-                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                    <Container className={appStyles.Content}>{textFields}</Container>
                 </Col>
+                {/* <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+                    <Container className={appStyles.Content}>{textFields}</Container>
+                </Col> */}
             </Row>
         </Form>
     );

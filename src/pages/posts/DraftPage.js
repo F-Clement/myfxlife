@@ -17,7 +17,7 @@ function DraftPage({ message = "" }) {
 
 
   useEffect(() => {
-    const fetchDrafts = async () => {
+    const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/drafts/`);
         setDrafts(data);
@@ -26,7 +26,7 @@ function DraftPage({ message = "" }) {
       }
     };
 
-    fetchDrafts();
+    handleMount();
   }, []);
   
   return (

@@ -29,7 +29,7 @@ const Draft = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/drafts/${id}/`);
-      history.push(`/drafts`);
+      history.goBack();
     } catch (err) {
       console.log(err);
     }

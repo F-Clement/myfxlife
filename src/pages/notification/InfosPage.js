@@ -11,13 +11,13 @@ import CreateNotification from "./CreateNotification";
 import NoResults from "../../assets/no-results.png";
 import Info from "./Info";
 
-function InfosPage({ message, filter = "" }) {
+function InfosPage({ message = "" }) {
   const [infos, setInfos] = useState({results: []});
 
   useEffect(() => {
     const fetchInfos = async () => {
       try {
-        const { data } = await axiosReq.get(`/notifications/?${filter}`);
+        const { data } = await axiosReq.get(`/notifications/`);
         setInfos(data);
       } catch (err) {
         console.log(err);
@@ -25,7 +25,7 @@ function InfosPage({ message, filter = "" }) {
     };
 
     fetchInfos();
-  }, [infos, filter]);
+  }, [infos]);
 
   return (
     <Row className="h-100">

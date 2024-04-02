@@ -289,6 +289,11 @@ Link To Bacend: <https://myfxlifeapi-66a11d885add.herokuapp.com/>
 
 <img src="/src/assets/responsive.png">
 
+## Bug
+
+<p>When user tries to publis a draft, the title and content is published but the image does not come along.</p>
+<p>However if user changes image before publishing, everything works perfect</p>
+
 ## Deployment
 
 This application was deployed on Heroku. Below are the steps taken to successfully deploy.

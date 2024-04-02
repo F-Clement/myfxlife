@@ -11,33 +11,38 @@ import CreateNotification from "./CreateNotification";
 function InfosPage() {
   const [info, setInfo] = useState({results: []});
 
-  // useEffect(() => {
-  //   const handleMount = async () => {
-  //     try {
-  //       const { data } = await axiosReq.get(`/notifications/`);
-  //       setInfo(data);
-  //       console.log(info);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/notifications/`);
+        setInfo(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  //   handleMount();
-  // }, [info]);
-
+    handleMount();
+  }, [info]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>My Notifications</p>
-       
+        <>
+          {info.results.length ? (
+            info.results.map((notif) => (
+              <Draft key={notif.id} {...notif} setInfo={setInfo} />
+            ))
+          ) : (
+            <Container className={appStyles.Content}>
+              <Asset src={NoResults} message={message} />
+            </Container>
+          )}
+        </>
       </Col>
       <Col>
         <CreateNotification />
       </Col>
-      {/* <Col lg={6} className="d-none d-lg-block p-0 p-lg-2">
-        <CreateNotification />
-      </Col> */}
     </Row>
   );
 }

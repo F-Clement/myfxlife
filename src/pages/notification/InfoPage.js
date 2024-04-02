@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import Info from "./Info";
@@ -20,15 +18,12 @@ function InfoPage() {
           axiosReq.get(`/notifications/${id}`),
         ]);
         setInfo({ results: [info] });
-        console.log(info);
       } catch (err) {
         console.log(err);
       }
     };
-
     handleMount();
   }, [id]);
-
 
   return (
     <Row className="justify-content-md-center">

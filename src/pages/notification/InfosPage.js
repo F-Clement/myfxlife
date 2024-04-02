@@ -2,36 +2,39 @@ import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import Container from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
+import Asset from "../../components/Asset";
 
-// import appStyles from "../../App.module.css";
+import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import CreateNotification from "./CreateNotification";
+import NoResults from "../../assets/no-results.png";
+import Info from "./Info";
 
-function InfosPage() {
-  const [info, setInfo] = useState({results: []});
+function InfosPage({ message, filter = "" }) {
+  const [infos, setInfos] = useState({results: []});
 
   useEffect(() => {
-    const handleMount = async () => {
+    const fetchInfos = async () => {
       try {
-        const { data } = await axiosReq.get(`/notifications/`);
-        setInfo(data);
+        const { data } = await axiosReq.get(`/notifications/?${filter}`);
+        setInfos(data);
       } catch (err) {
         console.log(err);
       }
     };
 
-    handleMount();
-  }, [info]);
+    fetchInfos();
+  }, [infos, filter]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>My Notifications</p>
         <>
-          {info.results.length ? (
-            info.results.map((notif) => (
-              <Draft key={notif.id} {...notif} setInfo={setInfo} />
+          {infos.results.length ? (
+            infos.results.map((notif) => (
+              <Info key={notif.id} {...notif} setInfos={setInfos} />
             ))
           ) : (
             <Container className={appStyles.Content}>

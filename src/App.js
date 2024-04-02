@@ -52,7 +52,7 @@ function App() {
               <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
-              <Route exact path="/info" render={() => <InfosPage /> } />
+              <Route exact path="/info" render={() => <InfosPage filter={`owner__followed__owner__profile=${profile_id}&`} /> } />
               <Route exact path="/info/:id" render ={() => <InfoPage /> } />
               {/* <Route exact path="/create/info" render={() => <CreateNotification />} /> */}
               <Route render={() => <PageNotFound />} />

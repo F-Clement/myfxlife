@@ -86,6 +86,7 @@ function DraftEditForm() {
   const publishDraft = async (event) => {
     event.preventDefault();
     const formData = new FormData();
+    
 
     formData.append("title", title);
     formData.append("content", content);
@@ -93,7 +94,7 @@ function DraftEditForm() {
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
-    
+    console.log(formData.image);
     try {
         await axiosReq.post("/posts/", formData);
         history.push(`/posts/`);
@@ -103,16 +104,6 @@ function DraftEditForm() {
           setErrors(err.response?.data);
         }
     }
-
-    // try {
-    //   await axiosReq.push(`/posts}/`, formData);
-    //   history.push(`/posts`);
-    // } catch (err) {
-      
-    //   if (err.response?.status !== 401) {
-    //     setErrors(err.response?.data);
-    //   }
-    // }
   };
 
   const textFields = (

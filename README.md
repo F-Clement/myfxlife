@@ -131,6 +131,14 @@ Link To Bacend: <https://myfxlifeapi-66a11d885add.herokuapp.com/>
 
     <img src="/src/assets/profile.png">
 
+- Drafts
+
+    A user can create drafts posts and save them so that they are only seen by the owner and then late publish these posts.
+
+- Notifications 
+
+    A user is able to create a notification message which contains title and content. This is meant to be seen by only profiles that follow the owner of the notifications.
+
 
 ## Testing
 

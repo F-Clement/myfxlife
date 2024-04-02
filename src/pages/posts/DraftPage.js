@@ -11,10 +11,8 @@ import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/no-results.png";
 
-
 function DraftPage({ message = "" }) {
   const [drafts, setDrafts] = useState({ results: [] });
-
 
   useEffect(() => {
     const handleMount = async () => {

@@ -21,8 +21,6 @@ import DraftPage from './pages/posts/DraftPage';
 import DraftEditForm from './pages/posts/DraftEditForm';
 import InfosPage from './pages/notification/InfosPage';
 import InfoPage from './pages/notification/InfoPage';
-// import CreateNotification from './pages/notification/CreateNotification';
-
 
 function App() {
 
@@ -54,7 +52,6 @@ function App() {
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
               <Route exact path="/info" render={() => <InfosPage filter={`owner__followed__owner__profile=${profile_id}&`} /> } />
               <Route exact path="/info/:id" render ={() => <InfoPage /> } />
-              {/* <Route exact path="/create/info" render={() => <CreateNotification />} /> */}
               <Route render={() => <PageNotFound />} />
             </Switch>
           </Container>

@@ -35,7 +35,6 @@ const Draft = (props) => {
     }
   };
     
-
   return (
     <Card className={styles.Post}>
       <Card.Body>

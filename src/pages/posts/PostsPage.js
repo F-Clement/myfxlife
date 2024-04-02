@@ -45,7 +45,6 @@ function PostsPage({ message, filter = "" }) {
 
   }, [filter, query, pathname, currentUser]);
 
-
   return (
     <div>
 

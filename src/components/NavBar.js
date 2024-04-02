@@ -18,7 +18,6 @@ const NavBar = () => {
     const setCurrentUser = useSetCurrentUser();
     const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
-
     const addPostIcon = (
         <NavLink
             className={styles.NavLink}
@@ -29,7 +28,6 @@ const NavBar = () => {
         </NavLink>
     );
     
-
     const ConfirmLogout = () => {
         Swal.fire({
             title: "Are you sure you want to logout?",
@@ -52,7 +50,6 @@ const NavBar = () => {
             
         }
     };
-
 
     const loggedInIcons = (
         <>
